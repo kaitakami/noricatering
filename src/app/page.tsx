@@ -33,9 +33,9 @@ const Hero = () => {
 
   return (
     <>
-      <motion.section ref={targetRef} style={{ opacity: sectionOpacity }} className="flex min-h-screen items-center justify-center bg-pattern">
-        <motion.div
-          className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
+      <motion.section animate={{ gridTemplateColumns: "repeat(2, minmax(0, 1fr))" }} transition={{ duration: 5, delay: 5 }} ref={targetRef} style={{ opacity: sectionOpacity }} className="grid min-h-screen grid-cols-2 items-center justify-center bg-pattern relative">
+        <div
+          className="container absolute flex flex-col items-center justify-center gap-12 px-4 py-16">
           <motion.h1 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 4, delay: 0.4 }} style={{ scale: titleScale, translateY: titleTranslateY }} className="text-7xl font-extrabold tracking-tight sm:text-9xl">
             NORI
           </motion.h1>
@@ -44,7 +44,7 @@ const Hero = () => {
             <br />
             Let´s make your guest happy together
           </motion.p>
-        </motion.div>
+        </div>
         <motion.div initial={{ opacity: 0, display: "none" }} animate={{ opacity: 1, display: "block" }} transition={{
           opacity: {
             duration: 4,
